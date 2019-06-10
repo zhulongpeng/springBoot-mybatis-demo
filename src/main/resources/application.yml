@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     name: Project
-    url: jdbc:mysql://127.0.0.1:3306/specials_demos
+    url: jdbc:mysql://127.0.0.1:3306/mybatis
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -24,4 +24,9 @@ spring:
       max-open-prepared-statements: 20
 mybatis:
   config-location: classpath:mapping/*.xml
-  type-aliases-package: com.zlp.springbootmybatisdemo.bussiness
+  type-aliases-package: com.zlp.springbootmybatisdemo.bussiness.entity
+pagehelper:
+  auto-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
