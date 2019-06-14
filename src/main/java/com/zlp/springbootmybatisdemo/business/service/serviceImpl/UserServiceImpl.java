@@ -39,9 +39,11 @@ public class UserServiceImpl implements UserService {
         String token = jwtTokenUtil.generateToken(userDetails);
         if(StringUtils.isEmpty(token))return null;
         User user =  findUserByUserName(userName);
+        return null;
+    }
 
-
-
+    private User findUserByUserName(String userName) {
+        return null;
     }
 
 }

@@ -1,15 +1,15 @@
 package com.zlp.springbootmybatisdemo.base.security;
 
-import com.sun.tools.javac.util.List;
 import com.zlp.springbootmybatisdemo.business.dao.RoleMapper;
 import com.zlp.springbootmybatisdemo.business.dao.UserMapper;
+import com.zlp.springbootmybatisdemo.business.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import java.util.*;
 
 import java.util.stream.Collectors;
 
@@ -29,8 +29,7 @@ public class JwtUserDetailsServiceImpl implements UserDetailsService  {
         if(user == null){
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", userName));
         } else{
-            return new JwtUserDetails(user.getUsername(), user.getPassword(), roleList.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
+            return new JwtUserDetails(user.getUserName(), user.getPassword(), roleList.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
         }
-        return null;
     }
 }

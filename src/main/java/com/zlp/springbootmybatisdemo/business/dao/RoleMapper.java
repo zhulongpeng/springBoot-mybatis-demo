@@ -2,6 +2,8 @@ package com.zlp.springbootmybatisdemo.business.dao;
 
 import com.zlp.springbootmybatisdemo.business.entity.Role;
 
+import java.util.List;
+
 public interface RoleMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+
+    List<String> findByUserName(String userName);
 }
