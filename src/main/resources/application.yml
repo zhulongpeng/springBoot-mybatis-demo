@@ -22,6 +22,11 @@ spring:
     dbcp2:
       pool-prepared-statements: true
       max-open-prepared-statements: 20
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
 mybatis:
   config-location: classpath:mapping/*.xml
   type-aliases-package: com.zlp.springbootmybatisdemo.bussiness.entity
