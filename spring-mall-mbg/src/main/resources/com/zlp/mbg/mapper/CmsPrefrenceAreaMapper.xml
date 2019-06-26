@@ -131,7 +131,7 @@
       show_status, pic)
     values (#{name,jdbcType=VARCHAR}, #{subTitle,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
       #{showStatus,jdbcType=INTEGER}, #{pic,jdbcType=VARBINARY})
-  </insert>
+  </insert>.
   <insert id="insertSelective" parameterType="com.zlp.mbg.model.CmsPrefrenceArea">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
