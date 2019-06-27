@@ -2,7 +2,6 @@ package com.zlp.admin.component;
 
 import cn.hutool.json.JSONUtil;
 import com.zlp.common.CommonResult;
-import net.sf.json.JSONNull;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
